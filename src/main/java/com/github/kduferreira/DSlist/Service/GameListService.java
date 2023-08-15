@@ -1,8 +1,7 @@
 package com.github.kduferreira.DSlist.Service;
 
-import com.github.kduferreira.DSlist.DTO.ListDTO;
+import com.github.kduferreira.DSlist.DTO.GameListDTO;
 import com.github.kduferreira.DSlist.Repository.GameListRepository;
-import com.github.kduferreira.DSlist.Repository.GameRepository;
 import com.github.kduferreira.DSlist.domain.GameList;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,11 +16,11 @@ public class GameListService {
     private final GameListRepository gameListRepository;
 
 
-   
+
 
     @Transactional
-    public List<ListDTO> findAll(){
+    public List<GameListDTO> findAll(){
         List<GameList> result = gameListRepository.findAll();
-        return result.stream().map(x -> new ListDTO(x)).toList();
+        return result.stream().map(x -> new GameListDTO(x)).toList();
     }
 }

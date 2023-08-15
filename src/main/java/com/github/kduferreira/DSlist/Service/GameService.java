@@ -2,6 +2,7 @@ package com.github.kduferreira.DSlist.Service;
 
 import com.github.kduferreira.DSlist.DTO.GameDTO;
 import com.github.kduferreira.DSlist.DTO.GameMinDTO;
+import com.github.kduferreira.DSlist.Projections.GameMinProjection;
 import com.github.kduferreira.DSlist.Repository.GameRepository;
 import com.github.kduferreira.DSlist.domain.Game;
 
@@ -32,5 +33,9 @@ public class GameService {
         return result.stream().map(x -> new GameMinDTO(x)).toList();
 
 }
-
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x -> new GameMinDTO(x)).toList();
+    }
 }

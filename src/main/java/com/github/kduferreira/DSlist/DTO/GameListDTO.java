@@ -1,22 +1,20 @@
 package com.github.kduferreira.DSlist.DTO;
 
 import com.github.kduferreira.DSlist.domain.GameList;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import lombok.Data;
 
 @Data
-public class ListDTO {
+public class GameListDTO {
 
 
     private Long id;
     private String name;
 
 
-    public ListDTO() {
+    public GameListDTO() {
     }
 
-    public ListDTO(GameList entity) {
+    public GameListDTO(GameList entity) {
         this.id = entity.getId();
         this.name = entity.getName();
     }
