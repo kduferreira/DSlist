@@ -1,9 +1,10 @@
 package com.github.kduferreira.DSlist.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Objects;
-
+@Data
 @Entity
 @Table(name = "tb_game_list")
 public class GameList {
